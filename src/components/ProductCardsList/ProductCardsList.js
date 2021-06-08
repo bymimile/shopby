@@ -3,10 +3,13 @@ import ProductCard from '../ProductCard/ProductCard'
 import './product-cards-list.scss';
 
 const ProductCardsList = (props) => {
+    const {data} = props
+    
+    const biscuits = data[0]
     return (
         <div className="col-sm">
             <div className="row">
-                <ProductCard />
+              {biscuits.map(biscuit => <ProductCard biscuit={biscuit}/>)}  
             </div>
         </div>
     )
